@@ -1,3 +1,5 @@
+[ **English** ](./README.md) | 日本語 
+
 # MCBE ProxVC
 
 [![Wiki](https://img.shields.io/badge/Wiki-Documentation-blue?style=for-the-badge&logo=read-the-docs)](https://mcproxvc.ovh/wiki/)
