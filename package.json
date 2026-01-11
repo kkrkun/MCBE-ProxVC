@@ -1,36 +1,37 @@
 {
-  "name": "socket-be",
-  "version": "1.2.3",
-  "description": "This is a tool to connect with MinecraftBE via websocket easier.",
-  "main": "src/index.js",
-  "types": "typings/index.d.ts",
+  "name": "mcbe-proxvc",
+  "version": "3.1.10",
+  "description": "Minecraft Bedrock Edition Proxy with Voice Chat support",
+  "main": "proximity_voice_chat.js",
   "scripts": {
+    "start": "node proximity_voice_chat.js",
     "test": "node test.js",
-    "lint": "eslint ./src/ --ext .js,.jsx,.ts,.tsx & tsc"
+    "lint": "eslint ./ --ext .js,.jsx,.ts,.tsx && tsc"
   },
+  "author": "kkrkun",
+  "license": "SEE LICENSE IN LICENSE",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kkrkun/proximity_voice_chat.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kkrkun/proximity_voice_chat/issues"
+  },
+  "homepage": "https://mcproxvc.ovh/",
   "dependencies": {
-    "@discordjs/voice": "^0.18.0",
-    "discord.js": "^14.19.3",
     "express": "^4.21.2",
     "flatted": "^3.3.3",
-    "fs": "^0.0.1-security",
     "get-port": "^4.2.0",
     "json5": "^2.2.3",
     "moment-timezone": "^0.5.41",
+    "msgpack-lite": "^0.1.26",
     "node-fetch": "^2.7.0",
-    "path": "^0.12.7",
-    "socket-be": "^2.3.1",
     "ssh2": "^1.17.0",
     "wanakana": "^5.3.1",
     "ws": "^8.18.2"
   },
   "devDependencies": {
     "eslint": "^8.39.0",
-    "typescript": "^5.0.4"
-  },
-  "author": "tutinoko2048",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/tutinoko2048/SocketBE/issues"
+    "typescript": "^5.9.3"
   }
 }
