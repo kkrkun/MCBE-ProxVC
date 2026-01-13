@@ -24,5 +24,6 @@ Information regarding settings and specifications is aggregated in the Wiki.
 
 * **[🏠 Home / Overview](https://mcproxvc.ovh/en/wiki/introduction/)**
 * **[🚀 Installation](https://mcproxvc.ovh/en/wiki/setup/)**
+* **[🔗 constant](https://mcproxvc.ovh/en/wiki/mc/constant/)**
 * **[💬 Functions / Settings](https://mcproxvc.ovh/en/wiki/functions/)**
 * **[❓ Troubleshooting](https://mcproxvc.ovh/en/wiki/troubleshooting/)**

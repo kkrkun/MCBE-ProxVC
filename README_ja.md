@@ -20,9 +20,10 @@ Java版Modのような、距離に応じた臨場感のある会話を実現し�
 
 ## 📖 公式ドキュメント (Wiki)
 
-設定や仕様に関する情報は Wiki に集約されています。
+設定や仕様に関する情報は Wiki に書かれています。
 
 * **[🏠 ホーム / 概要](https://mcproxvc.ovh/wiki/introduction/)**
 * **[🚀 導入方法](https://mcproxvc.ovh/wiki/setup/)**
+* **[🔗 常時接続](https://mcproxvc.ovh/wiki/mc/constant/)**
 * **[💬 機能 / 設定](https://mcproxvc.ovh/wiki/functions/)**
 * **[❓ 困ったときは](https://mcproxvc.ovh/wiki/troubleshooting/)**
