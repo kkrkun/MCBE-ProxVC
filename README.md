@@ -27,3 +27,4 @@ Information regarding settings and specifications is aggregated in the Wiki.
 * **[🔗 constant](https://mcproxvc.ovh/en/wiki/mc/constant/)**
 * **[💬 Functions / Settings](https://mcproxvc.ovh/en/wiki/functions/)**
 * **[❓ Troubleshooting](https://mcproxvc.ovh/en/wiki/troubleshooting/)**
+* **[🤖 AI Support](https://notebooklm.google.com/notebook/9983f4a0-8aae-4713-8948-20cfb9bd0f48)**

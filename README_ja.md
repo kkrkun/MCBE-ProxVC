@@ -27,3 +27,4 @@ Java版Modのような、距離に応じた臨場感のある会話を実現し�
 * **[🔗 常時接続](https://mcproxvc.ovh/wiki/mc/constant/)**
 * **[💬 機能 / 設定](https://mcproxvc.ovh/wiki/functions/)**
 * **[❓ 困ったときは](https://mcproxvc.ovh/wiki/troubleshooting/)**
+* **[🤖 AIサポート](https://notebooklm.google.com/notebook/9983f4a0-8aae-4713-8948-20cfb9bd0f48)**
