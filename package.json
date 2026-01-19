@@ -2,9 +2,9 @@
   "name": "mcbe-proxvc",
   "version": "3.1.10",
   "description": "Minecraft Bedrock Edition Proxy with Voice Chat support",
-  "main": "proximity_voice_chat.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node proximity_voice_chat.js",
+    "start": "node index.js",
     "test": "node test.js",
     "lint": "eslint ./ --ext .js,.jsx,.ts,.tsx && tsc"
   },
@@ -12,10 +12,10 @@
   "license": "SEE LICENSE IN LICENSE",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kkrkun/proximity_voice_chat.git"
+    "url": "git+https://github.com/kkrkun/MCBE-ProxVC.git"
   },
   "bugs": {
-    "url": "https://github.com/kkrkun/proximity_voice_chat/issues"
+    "url": "https://github.com/kkrkun/MCBE-ProxVC/issues"
   },
   "homepage": "https://mcproxvc.ovh/",
   "dependencies": {
