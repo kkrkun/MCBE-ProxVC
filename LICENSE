@@ -1,31 +1,38 @@
-# 利用規約 (Terms of Use)
-このソフトウェアは、以下の条件の範囲内で、すべての個人および法人が自由に利用できます。
-
-## 許可事項
-本ソフトウェアを個人的な目的または商業的な目的で利用すること。
-
-## 禁止事項
-本ソフトウェアの全部または一部を、有償・無償を問わず、複製、改変、再配布、サブライセンスすること。
-
-本ソフトウェアをリバースエンジニアリング、逆コンパイル、または逆アセンブルすること。
-
-## 免責事項
-本ソフトウェアの利用によって生じたいかなる損害についても、作成者は一切の責任を負いません。
-
-本ソフトウェアは「現状有姿」で提供されるものであり、商品性、特定の目的への適合性、および権利の非侵害についての黙示的な保証を含み、それに限定されず、明示的または黙示的な一切の保証を伴いません。
-
-# Terms of Use
-This software may be used freely by all individuals and corporations within the scope of the following conditions.
-
-## Permissions
-To use this software for personal or commercial purposes.
-
-## Prohibitions
-To copy, modify, redistribute, or sublicense all or part of this software, whether for a fee or free of charge.
-
-To reverse engineer, decompile, or disassemble this software.
-
-## Disclaimer
-The author assumes no responsibility for any damages arising from the use of this software.
-
-This software is provided "as is", without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and noninfringement.
+{
+  "name": "mcbe-proxvc",
+  "version": "3.1.10",
+  "description": "Minecraft Bedrock Edition Proxy with Voice Chat support",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "node test.js",
+    "lint": "eslint ./ --ext .js,.jsx,.ts,.tsx && tsc"
+  },
+  "author": "kkrkun",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kkrkun/proximity_voice_chat.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kkrkun/proximity_voice_chat/issues"
+  },
+  "homepage": "https://mcproxvc.ovh/",
+  "dependencies": {
+    "express": "^4.21.2",
+    "flatted": "^3.3.3",
+    "get-port": "^4.2.0",
+    "json5": "^2.2.3",
+    "moment-timezone": "^0.5.41",
+    "msgpack-lite": "^0.1.26",
+    "node-fetch": "^2.7.0",
+    "socket-be": "^2.4.0",
+    "ssh2": "^1.17.0",
+    "wanakana": "^5.3.1",
+    "ws": "^8.18.2"
+  },
+  "devDependencies": {
+    "eslint": "^8.39.0",
+    "typescript": "^5.9.3"
+  }
+}
