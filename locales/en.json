@@ -28,7 +28,7 @@
     "config_list": "§l[Current Settings]§r\nLanguage: {lang}\nProximity VC: {proximity}\nMax Distance: §e{distance}§r\nVerify Code: {verify}\nOutput: {output}\nSpectator Split: {spectator}\n - Spectator Listen: {listen}\n - Spectator Dimension: {dim}",
     "help_divider": "--------------------",
     "help_list": "Command list:\n !help - show help\n !name - check your VC GamerTag",
-    "help_host": "Host-only command : \n !config - Show current settings\n !lang - !lang <ja/en/zn> lang change\n !dis - !dis <Number> set max distance\n !pvc - !pvc <§atrue§r/§cfalse§r> enable/disable proximity voice chat",
+    "help_host": "Host-only command : \n !config - Show current settings\n !lang - !lang <ja/en/zh> lang change\n !dis - !dis <Number> set max distance\n !pvc - !pvc <§atrue§r/§cfalse§r> enable/disable proximity voice chat",
     "help_host_2": " !output - !output <§atrue§r/§cfalse§r> enable/disable information output to minecraft chat\n !verify - !verify <§atrue§r/§cfalse§r> enable/disable verify code\n !spectator - !spectator <§atrue§r/§cfalse§r> separate spectator and VC",
     "help_spec": "Settings effective only when \"spectator\" is true : \n !specListen - !specListen <§atrue§r/§cfalse§r> Spectator can listen to other gamemode players\n !specDim - !specDim <§atrue§r/§cfalse§r> Spectator`s VC separated by dimension",
     "join_msg": "Using Proximity Voice Chat\nURL:https://mcproxvc.ovh/connect/\nRoomID is {roomId}\nYour VCname is {vcname}",

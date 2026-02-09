@@ -1,27 +1,19 @@
 {
-    "app_id": "", // SkyWay Application ID// SkyWayのアプリケーションID
-    "secret_key": "", // SkyWay Secret Key// SkyWayのシークレットキー
-
-    "username": "", // TCP Exposer Username// TCP Exposerのユーザー名
-    "sub_domain": "", // TCP Exposer Subdomain (Used for RoomID)// RoomIDに使用するTCP Exposerのサブドメイン
-    "sub_domain2": "", // TCP Exposer Subdomain (Used for Minecraft Connection, usually left blank)// minecraftとの連携に使用するTCP Exposerのサブドメイン（通常は空欄）
-    "ssh_password": "", // TCP Exposer Password// TCP Exposerのパスワード
-
-    "port": 19132, // Port number used for Minecraft connection// minecraftとの連携に使用するポート番号
-    "web_port": 8000, // Port number used for Website connection// Webサイトとの連携に使用するポート番号
-
-    "proximity": true, // Enable Proximity VC (default: true)// 近接VCを有効にするか (デフォルト: true)
-    "spectator": true, // Separate VC for players in Spectator mode (default: true)// スペクテイターモードのプレイヤーはVCを分けるか (デフォルト: true)
-
-    // Settings effective only when "spectator" is true// "spectator"がtrueの場合のみ有効な設定
-    "specListen": true, // Allow spectators to hear non-spectator players (default: true)// スペクテイターが他モードプレイヤーの会話を聞けるようにするか (デフォルト: true)
-    "specDim": false, // Separate conversations among spectators by dimension (default: false)// スペクテイター同士の会話をディメンションごとに分けるか (デフォルト: false)
-    
-    "password": false, // For old vesion //古いバージョン用
-    "verify": false, // Require verify code for Proximity VC connection (default: false)// 近接VC接続時に認証コードを要求するか (デフォルト: false)
+    "app_id": "7dc26499-2433-43ec-8285-99beff41a46b", // SkyWayのアプリケーションID// SkyWay Application ID
+    "secret_key": "wh5kAtg6YqWOjgv9191fCQ4q6JVZL+pFf/bSkPEKRMY=", // SkyWayのシークレットキー// SkyWay Secret Key
+    "username": "kkryade1212", // TCP Exposerのユーザー名// TCP Exposer Username
+    "sub_domain": "kkryade1212", // RoomIDに使用するTCP Exposerのサブドメイン// TCP Exposer Subdomain (Used for RoomID)
+    "sub_domain2": "proxvc", // minecraftとの連携に使用するTCP Exposerのサブドメイン（通常は空欄）// TCP Exposer Subdomain (Used for Minecraft Connection, usually left blank)
+    "ssh_password": "tknskkr1212", // TCP Exposerのパスワード // TCP Exposer Password
+    "port": 19132, // minecraftとの連携に使用するポート番号// Port number used for Minecraft connection
+    "web_port": 8000, // Webサイトとの連携に使用するポート番号// Port number used for Website connection
+    "proximity": true, // 近接VCを有効にするか (デフォルト: true)// Enable Proximity VC (default: true)
+    "spectator": true, // スペクテイターモードのプレイヤーはVCを分けるか (デフォルト: true)// Separate VC for players in Spectator mode (default: true)
+    // "spectator"がtrueの場合のみ有効な設定// Settings effective only when "spectator" is true
+    "specListen": true, // スペクテイターが他モードプレイヤーの会話を聞けるようにするか (デフォルト: true)// Allow spectators to hear non-spectator players (default: true)
+    "specDim": false, // スペクテイター同士の会話をディメンションごとに分けるか (デフォルト: false)// Separate conversations among spectators by dimension (default: false)
+    "verify": false, // 近接VC接続時に認証コードを要求するか (デフォルト: false)// Require verify code for Proximity VC connection (default: false)
     "output": true, // minecraftのチャットに情報を出力するか (デフォルト: true)// Output information to Minecraft chat (default: true)
-    
-    "distance": 10, // Maximum block distance for voice to reach in-game (default: 10.0)// ゲーム内で声が届く最大ブロック数 (デフォルト: 10.0)
-    "lang": "en" // Language setting ("ja" or "en")// 表示言語の設定 ("ja" または "en")
-
+    "distance": 10, // ゲーム内で声が届く最大ブロック数 (デフォルト: 6.0)// Maximum block distance for voice to reach in-game (default: 6.0)
+    "lang": "ja" // 表示言語の設定 ("ja" または "en")// Language setting ("ja" or "en")
 }

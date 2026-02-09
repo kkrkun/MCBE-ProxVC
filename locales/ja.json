@@ -28,7 +28,7 @@
     "config_list": "§l[現在の設定一覧]§r\n言語 (Lang): {lang}\n近接VC (Proximity): {proximity}\n最大距離 (Distance): §e{distance}§r\n認証コード (Verify): {verify}\n出力 (Output): {output}\nスペクテイター分離 (Spectator): {spectator}\n - スペクテイター以外の声を聞ける (Listen): {listen}\n - ディメンション毎にVCを分ける (Dim): {dim}",
     "help_divider": "--------------------",
     "help_list": "コマンド一覧：\n !help - ヘルプを表示します\n !name - VCで使うゲーマータグを確認できます",
-    "help_host": "ホスト専用コマンド：\n !config - 現在の設定一覧を表示します\n !lang - !lang <ja/en/zn> 言語の変更\n !dis - !dis <数値> 声の届く距離を変更できます\n !pvc - !pvc <§atrue§r/§cfalse§r> 近接vcを有効/無効にできます",
+    "help_host": "ホスト専用コマンド：\n !config - 現在の設定一覧を表示します\n !lang - !lang <ja/en/zh> 言語の変更\n !dis - !dis <数値> 声の届く距離を変更できます\n !pvc - !pvc <§atrue§r/§cfalse§r> 近接vcを有効/無効にできます",
     "help_host_2": " !output - !output <§atrue§r/§cfalse§r> minecraftチャットへの出力を有効/無効にできます\n !verify - !verify <§atrue§r/§cfalse§r> 認証コードを有効/無効にできます\n !spectator - !spectator <§atrue§r/§cfalse§r> スペクテイターとVCを分けます",
     "help_spec": "spectatorが有効の場合のみ有効：\n !specListen - !specListen <§atrue§r/§cfalse§r> スペクテイターが他モードプレイヤーの会話を聞けるようになります \n !specDim - !specDim <§atrue§r/§cfalse§r> スペクテイター同士の会話をディメンションごとに分けます",
     "join_msg": "近接VCを使用中です\nURL:https://mcproxvc.ovh/connect/\nルームIDは{roomId}です\nあなたのVCnameは{vcname}です",
