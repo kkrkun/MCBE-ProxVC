@@ -1,6 +1,9 @@
 // src/ssh_handler.js
 const { Client } = require('ssh2');
 const net = require('net');
+const WebSocket = require('ws');
+const zlib = require('zlib');
+const msgpack = require('msgpack-lite');
 
 /**
  * SSHトンネルを開始する関数
