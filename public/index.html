@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MCBE ProxVC Setup</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Silkscreen&display=swap"
+    rel="stylesheet">
+  <link rel="apple-touch-icon" sizes="180x180" href="/icon/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/x-icon" href="/icon/favicon.ico">
+  <link rel="icon" type="image/png" href="/icon/apple-touch-icon-180x180.png" sizes="180x180">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div style="max-width:640px;margin:0 auto;padding:1.5rem 1rem 4rem">
+
+    <!-- Header -->
+    <div style="text-align:center;margin-bottom:2rem">
+      <i class="fa-solid fa-cube"
+        style="font-size:2.5rem;color:#22c55e;filter:drop-shadow(0 0 12px rgba(34,197,94,.6));margin-bottom:.75rem;display:block"></i>
+      <h1 class="pixel-font"
+        style="font-size:1.75rem;background:linear-gradient(to bottom,#fff,#94a3b8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">
+        MCBE ProxVC</h1>
+      <p style="color:#64748b;font-size:.8rem;margin-top:.25rem" id="t-subtitle">Setup Control Panel</p>
+    </div>
+
+    <!-- Tabs -->
+    <div class="glass-card"
+      style="padding:.375rem;display:flex;justify-content:space-between;align-items:center;margin-bottom:1.25rem">
+      <div style="display:flex;gap:.25rem">
+        <button class="tab-btn active" id="tab-server" onclick="switchTab('server')"><i class="fa-solid fa-server"
+            style="margin-right:.4rem"></i><span id="t-tab-server">Server / Config</span></button>
+        <button class="tab-btn" id="tab-ai" onclick="switchTab('ai')"><i class="fa-solid fa-robot"
+            style="margin-right:.4rem"></i><span id="t-tab-ai">AI Support</span></button>
+      </div>
+      <div style="display:flex;align-items:center;gap:.5rem;padding-right:.375rem">
+        <label style="font-size:.75rem;color:#94a3b8" id="t-lang-label">Language</label>
+        <select class="input-field" id="lang-select" onchange="changeLang(this.value)"
+          style="width:auto;padding:.25rem .5rem;font-size:.75rem;padding-right:2rem">
+          <option value="en">English (en)</option>
+          <option value="ja">日本語 (ja)</option>
+          <option value="zh">简体中文 (zh)</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Tab: Server/Config -->
+    <div id="panel-server" class="fade-in">
+
+      <!-- Status Card -->
+      <div class="glass-card"
+        style="padding:1rem;margin-bottom:1rem;display:flex;align-items:center;justify-content:space-between">
+        <div style="display:flex;align-items:center;gap:.75rem">
+          <i class="fa-solid fa-circle-dot" id="status-icon" style="color:#374151;font-size:1.25rem"></i>
+          <div>
+            <div style="font-weight:700;font-size:.95rem" id="t-status-label">Idle</div>
+            <div style="font-size:.75rem;color:#64748b" id="status-sub">--</div>
+          </div>
+        </div>
+        <span class="status-badge status-idle" id="status-badge">IDLE</span>
+      </div>
+
+      <!-- Flash message -->
+      <div id="flash-msg"
+        style="display:none;padding:.75rem 1rem;border-radius:.75rem;margin-bottom:1rem;font-size:.875rem;font-weight:600">
+      </div>
+
+      <!-- Session Active Panel -->
+      <div id="session-panel" class="glass-card fade-in" style="padding:1.25rem;margin-bottom:1rem;display:none">
+        <div
+          style="font-size:.75rem;font-weight:600;color:#6b7280;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.75rem">
+          <i class="fa-solid fa-link" style="margin-right:.4rem"></i><span id="t-session-info">Session Info</span>
+        </div>
+        <div id="room-id-section" style="display:none;margin-bottom:1rem">
+          <div class="section-label" id="t-room-id-label">Room ID</div>
+          <div class="code-box" id="room-id-display">--<button class="copy-btn" onclick="copyText('room-id-display')"
+              title="Copy"><i class="fa-solid fa-copy"></i></button></div>
+        </div>
+        <div id="cmd-section" style="display:none;margin-bottom:1rem">
+          <div class="section-label" id="t-mc-connect">Connect from Minecraft</div>
+          <div class="code-box" id="cmd-display">--<button class="copy-btn" onclick="copyText('cmd-display')"
+              title="Copy"><i class="fa-solid fa-copy"></i></button></div>
+        </div>
+        <div id="cmd-always-section" style="display:none;margin-bottom:1rem">
+          <div class="section-label" id="t-mc-always-connect">Connect from Minecraft (Persistent)</div>
+          <div class="code-box" id="cmd-always-display">--<button class="copy-btn"
+              onclick="copyText('cmd-always-display')" title="Copy"><i class="fa-solid fa-copy"></i></button></div>
+        </div>
+        <div id="vc-url-section" style="display:none">
+          <div class="section-label" id="t-vc-url">Participants URL</div>
+          <div class="code-box" id="vc-url-display">--<button class="copy-btn" onclick="copyText('vc-url-display')"
+              title="Copy"><i class="fa-solid fa-copy"></i></button></div>
+          <a id="vc-url-link" href="#" target="_blank"
+            style="display:inline-flex;align-items:center;gap:.375rem;margin-top:.5rem;color:#4ade80;font-size:.8rem;text-decoration:none"><i
+              class="fa-solid fa-arrow-up-right-from-square"></i><span id="t-open-link">Open in browser</span></a>
+        </div>
+      </div>
+
+      <!-- Settings Card -->
+      <div class="glass-card" style="padding:1.25rem;margin-bottom:1rem" id="settings-card">
+        <div style="margin-bottom:1rem">
+          <div style="font-size:.75rem;font-weight:600;color:#6b7280;text-transform:uppercase;letter-spacing:.05em"><i
+              class="fa-solid fa-sliders" style="margin-right:.4rem"></i><span id="t-settings">Settings</span></div>
+        </div>
+
+        <!-- Upload config -->
+        <div style="margin-bottom:1.25rem">
+          <label for="config-upload" class="btn-secondary"
+            style="display:flex;align-items:center;justify-content:center;gap:.5rem;width:100%;cursor:pointer"><i
+              class="fa-solid fa-file-arrow-up"></i><span id="t-upload">Upload Config File</span></label>
+          <input type="file" id="config-upload" accept=".json,.jsonc,.json5" style="display:none"
+            onchange="handleConfigUpload(event)">
+        </div>
+
+        <!-- Toggles Row 1 -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:.75rem">
+          <div>
+            <div class="section-label"><span id="t-prox-col">Prox VC</span> <i class="fa-solid fa-circle-info info-icon"
+                id="desc-prox-col" style="margin-left:.25rem;cursor:help;color:#64748b" title=""></i></div>
+            <button class="toggle on" id="toggle-proximity" onclick="toggleSetting('proximity')"></button>
+          </div>
+          <div>
+            <div class="section-label"><span id="t-pass-col">Password</span> <i
+                class="fa-solid fa-circle-info info-icon" id="desc-pass-col"
+                style="margin-left:.25rem;cursor:help;color:#64748b" title=""></i></div>
+            <button class="toggle" id="toggle-verify" onclick="toggleSetting('verify')"></button>
+          </div>
+        </div>
+
+        <!-- Distance -->
+        <div style="margin-bottom:.75rem">
+          <div class="section-label"><span id="t-dis-col">Max Distance</span> <i
+              class="fa-solid fa-circle-info info-icon" id="desc-dis-col"
+              style="margin-left:.25rem;cursor:help;color:#64748b" title=""></i></div>
+          <div
+            style="display:flex;align-items:center;background:#1e293b;border:1px solid #334155;border-radius:.5rem;padding:0 .75rem;transition:border-color .2s"
+            onfocusin="this.style.borderColor='#22c55e'" onfocusout="this.style.borderColor='#334155'">
+            <input type="number" class="input-field" id="input-distance" value="10.00" min="0" step="0.5"
+              onchange="updateDistanceInput()"
+              style="flex:1;background:transparent;border:none;padding:.5rem 0;box-shadow:none;-moz-appearance:textfield;">
+            <style>
+              #input-distance::-webkit-outer-spin-button,
+              #input-distance::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+              }
+            </style>
+            <div style="display:flex;gap:.75rem">
+              <button onclick="changeDistance(-0.5)"
+                style="background:transparent;border:none;color:#94a3b8;cursor:pointer;font-size:1rem"><i
+                  class="fa-solid fa-minus"></i></button>
+              <button onclick="changeDistance(0.5)"
+                style="background:transparent;border:none;color:#94a3b8;cursor:pointer;font-size:1rem"><i
+                  class="fa-solid fa-plus"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Toggles Row 2 -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:.75rem">
+          <div>
+            <div class="section-label"><span id="t-spec-col">Spectator Split</span> <i
+                class="fa-solid fa-circle-info info-icon" id="desc-spec-col"
+                style="margin-left:.25rem;cursor:help;color:#64748b" title=""></i></div>
+            <button class="toggle on" id="toggle-spectator" onclick="toggleSetting('spectator')"></button>
+          </div>
+          <div>
+            <div class="section-label"><span id="t-output-col">Output</span> <i
+                class="fa-solid fa-circle-info info-icon" id="desc-output-col"
+                style="margin-left:.25rem;cursor:help;color:#64748b" title=""></i></div>
+            <button class="toggle on" id="toggle-output" onclick="toggleSetting('output')"></button>
+          </div>
+        </div>
+
+        <!-- Spec sub-options -->
+        <fieldset
+          style="border: 1px solid rgba(148, 163, 184, 0.3); border-radius: 0.5rem; padding: 1rem 0.75rem 0.75rem 0.75rem; margin-bottom: 0.75rem; display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; transition: opacity 0.2s;"
+          id="spec-options">
+          <legend style="font-size: 0.75rem; color: #94a3b8; font-weight: 600; padding: 0 0.5rem;"
+            id="t-spec-options-legend">Only effective when Spectator Split is enabled</legend>
+          <div>
+            <div class="section-label"><span id="t-specListen-col">Spec Listen</span> <i
+                class="fa-solid fa-circle-info info-icon" id="desc-specListen-col"
+                style="margin-left:.25rem;cursor:help;color:#64748b"></i></div>
+            <button class="toggle on" id="toggle-specListen" onclick="toggleSetting('specListen')"></button>
+          </div>
+          <div>
+            <div class="section-label"><span id="t-specDim-col">Spec Dim</span> <i
+                class="fa-solid fa-circle-info info-icon" id="desc-specDim-col"
+                style="margin-left:.25rem;cursor:help;color:#64748b"></i></div>
+            <button class="toggle" id="toggle-specDim" onclick="toggleSetting('specDim')"></button>
+          </div>
+        </fieldset>
+
+        <!-- Room ID / Sub-domain -->
+        <div style="margin-bottom:.75rem">
+          <div class="section-label" id="t-room-id-col">Desired Room ID</div>
+          <input type="text" class="input-field" id="input-sub-domain" placeholder="(optional)">
+        </div>
+
+        <!-- Advanced -->
+        <details style="margin-bottom:.5rem">
+          <summary style="color:#94a3b8;font-size:.875rem;font-weight:600;padding:.5rem 0">
+            <span><i class="fa-solid fa-gear" style="margin-right:.4rem;color:#4b5563"></i><span
+                id="t-advanced">Advanced Settings</span></span>
+            <i class="fa-solid fa-chevron-down chevron" style="color:#4b5563;font-size:.75rem"></i>
+          </summary>
+          <div style="padding-top:.875rem;display:flex;flex-direction:column;gap:.75rem">
+            <div>
+              <div class="section-label" id="t-app-id-col">SkyWay App ID</div>
+              <input type="text" class="input-field" id="input-app-id" placeholder="(optional)">
+            </div>
+            <div>
+              <div class="section-label" id="t-secret-key-col">SkyWay Secret Key</div>
+              <input type="password" class="input-field" id="input-secret-key" placeholder="(optional)">
+            </div>
+            <div id="container-username-col" style="display:none">
+              <div class="section-label" id="t-username-col">TCP Exposer Username</div>
+              <input type="text" class="input-field" id="input-username" placeholder="(optional)">
+            </div>
+            <div id="container-ssh-col" style="display:none">
+              <div class="section-label" id="t-ssh-col">TCP Exposer Password</div>
+              <input type="password" class="input-field" id="input-ssh-password" placeholder="(optional)">
+            </div>
+          </div>
+        </details>
+
+        <!-- Download config -->
+        <button class="btn-secondary" style="width:100%;margin-top:.75rem" onclick="downloadConfig()"><i
+            class="fa-solid fa-download" style="margin-right:.4rem"></i><span id="t-download">Download
+            Config</span></button>
+      </div>
+
+      <!-- Action Buttons -->
+      <div id="start-section">
+        <button class="btn-primary" id="btn-start" onclick="startSession()">
+          <i class="fa-solid fa-play"></i><span id="t-start">Start Proximity VC</span>
+        </button>
+      </div>
+      <div id="stop-section" style="display:none">
+        <button class="btn-danger" id="btn-stop" onclick="stopSession()">
+          <i class="fa-solid fa-stop"></i><span id="t-stop">Stop Proximity VC</span>
+        </button>
+      </div>
+
+    </div><!-- /panel-server -->
+
+    <!-- Tab: AI Support -->
+    <div id="panel-ai" style="display:none" class="fade-in">
+      <div class="glass-card" style="padding:1.25rem;margin-bottom:1rem">
+        <div
+          style="font-size:.75rem;font-weight:600;color:#6b7280;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.875rem">
+          <i class="fa-solid fa-key" style="margin-right:.4rem"></i><span id="t-api-key-label">Gemini API Key</span>
+        </div>
+        <input type="password" class="input-field" id="gemini-api-key" placeholder="" id="gemini-api-key-input"
+          style="margin-bottom:.5rem">
+        <p style="font-size:.7rem;color:#4b5563"><i class="fa-solid fa-circle-info"
+            style="margin-right:.25rem"></i><span id="t-api-key-note">Key is stored locally in your browser only.</span>
+          <a href="https://aistudio.google.com/apikey" target="_blank" style="color:#4ade80;text-decoration:none">Google
+            AI Studio</a>
+        </p>
+      </div>
+
+      <div class="glass-card"
+        style="padding:1.25rem;min-height:300px;max-height:500px;overflow-y:auto;margin-bottom:1rem" id="chat-area">
+        <div style="text-align:center;color:#374151;padding:3rem 0" id="chat-placeholder">
+          <i class="fa-solid fa-robot" style="font-size:2.5rem;margin-bottom:.75rem;display:block"></i>
+          <p style="font-size:.875rem" id="t-ai-placeholder">Ask me anything about MCBE ProxVC</p>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:.5rem">
+        <input type="text" class="input-field" id="chat-input" style="flex:1"
+          onkeydown="if(event.key==='Enter')sendChat()">
+        <button class="btn-primary" style="width:auto;padding:.5rem 1.25rem" onclick="sendChat()"><i
+            class="fa-solid fa-paper-plane"></i></button>
+      </div>
+    </div>
+
+  </div><!-- /container -->
+
+  <!-- Custom Tooltip -->
+  <div id="custom-tooltip" class="custom-tooltip"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
